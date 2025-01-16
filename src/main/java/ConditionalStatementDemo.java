@@ -1,39 +1,48 @@
 public class ConditionalStatementDemo {
 
     public static void main(String[] args) {
-
         ConditionalStatementDemo d1 = new ConditionalStatementDemo();
-       // System.out.println(d1.getAgeCategory(5));
-
-        String result = d1.getAgeCategory(30);
-        System.out.println(result);
+        d1.switchDemo(60);
+        //d1.switchDemo2('M');
     }
 
-    public String getAgeCategory(int age) {
+    //public String getAgeCategory(int age)
 
-        String ageCategory = null;
+    //boolean, float, long,double: NA in switch condition
+    //char,byte,short,int,String :Allowed
+    public void switchDemo(int age){
 
-        //age>0 & age<18 :child
-        //age>18 & age<60 :adult
-        //age>60 :sc
+        switch(age) {
 
-        if  ( (age>0) &&  (age<18))
-        {
-             ageCategory = "child";
-            System.out.println("Running If block");
+
+            case 60:{
+                System.out.println("You are senior citizen");
+                break;
+            }
+            case 18: {
+                System.out.println("You are an adult");
+                break;
+            }
+            default : {
+                System.out.println("You are young");
+                break;
+            }
         }
-        else if ((age>=18) && (age<60)) {
-            ageCategory = "adult";
-            System.out.println("Running if else1 block");
+    }
+    public void switchDemo2(char gender){
+        switch (gender) {
+            case 'M': {
+                System.out.println("Gender is Male");
+                break;
+            }
+            case 'F': {
+                System.out.println("Gender is Female");
+                break;
+            }
+            default :{
+                System.out.println("Please provide correct input");
+                break;
+            }
         }
-        else if  (age>=60) {
-            ageCategory ="Senior Citizen";
-        }
-        else {
-            System.out.println("please learn more about ages");
-        }
-
-
-        return ageCategory;    //child,adult,SC
     }
 }
