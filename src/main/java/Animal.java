@@ -1,16 +1,14 @@
 public class Animal {
 
-    public static String name;
-
-
+    public String name;
     public int id;
 
-
-    public static void eat() {
-        System.out.println("Animal is Eating!");
+    public Animal(String animalName, int animalId) {
+        name = animalName;
+        id = animalId;
     }
+    public void getDetails() {
 
-    public void walk() {
-        System.out.println("walk");
+        System.out.println("Name is:"+name+", id is: "+id);
     }
 }
